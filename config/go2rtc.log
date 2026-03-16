@@ -1,0 +1,5 @@
+08:45:19.705 INF go2rtc platform=linux/amd64 revision=fa580c5 version=1.9.9
+08:45:19.706 INF config path=/tmp/go2rtc.yaml
+08:45:19.706 INF [rtsp] listen addr=:8554
+08:45:19.706 INF [api] listen addr=:1984
+08:45:19.706 INF [webrtc] listen addr=:8555

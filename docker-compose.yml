@@ -1,0 +1,18 @@
+services:
+  viseron:
+    image: roflcoopter/viseron:latest
+    container_name: viseron
+    shm_size: "1024mb"
+    volumes:
+      - ./segments:/segments
+      - ./snapshots:/snapshots
+      - ./thumbnails:/thumbnails
+      - ./event_clips:/event_clips
+      - ./timelapse:/timelapse
+      - ./config:/config
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 8888:8888
+    environment:
+      - PUID=1000
+      - PGID=1000

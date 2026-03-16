@@ -1,0 +1,108 @@
+# Thanks for trying out Viseron!
+# This is a small walkthrough of the configuration to get you started.
+# There are far more components and options available than what is listed here.
+# See the documentation for the full list of configuration options.
+
+## Start by adding some cameras
+ffmpeg:
+  camera:
+    camera_1:  # This value has to be unique across all cameras
+      name: camera_1
+      host: 192.168.137.226
+      port: 8080
+      path: /h264_pcm.sdp
+      username: "abc"
+      password: "1234"
+      fps: 30
+      recorder:
+        codec: h264
+      
+camera_2:  # This value has to be unique across all cameras
+      name: <camera friendly name>
+      host: <ip address or hostname of camera>
+      port: <port the camera listens on>
+      path: <URL path to the stream>
+      username: <if auth is enabled>
+      password: <if auth is enabled>
+
+
+
+## Then add an object detector
+# darknet:
+#   object_detector:
+#     cameras:
+#       camera_1:  # Attach detector to the configured camera_1 above
+#         fps: 1
+#         scan_on_motion_only: false  # Scan for objects even when there is no motion
+#         labels:
+#           - label: person
+#             confidence: 0.75
+#             trigger_event_recording: true
+
+#       camera_2:  # Attach detector to the configured camera_2 above
+#         fps: 1
+#         labels:
+#           - label: person
+#             confidence: 0.75
+#             trigger_event_recording: true
+
+
+## You can also use motion detection
+mog2:
+  motion_detector:
+    cameras:
+      camera_2:  # Changed from camera_2 to camera_1
+        fps: 1
+
+
+yolo:
+  object_detector:
+    model_path: /config/models/threat_detection_v1.pt 
+    cameras:
+      camera_1:
+        fps: 1
+        scan_on_motion_only: false
+        log_all_objects: true
+        labels:
+          - label: gun
+            confidence: 0.75
+            trigger_event_recording: true
+          - label: knife
+            confidence: 0.70
+            trigger_event_recording: true
+          - label: grenade
+            confidence: 0.80
+            trigger_event_recording: true
+          - label: explosive
+            confidence: 0.80
+            trigger_event_recording: true
+
+
+
+
+## To tie everything together we need to configure one more component.
+nvr:
+  camera_1:  # Run NVR for camera_1
+
+
+
+
+
+# yolo:
+#   object_detector:
+#     # Ensure you renamed the downloaded file to best.pt or updated this path
+#     model_path: /config/models/threat_detection_v1.pt
+#     cameras:
+#       camera_1:
+#         fps: 1
+#         scan_on_motion_only: true
+#         labels:
+#           - label: gun
+#             confidence: 0.75
+#           - label: explosive
+#             confidence: 0.70
+#           - label: grenade
+#             confidence: 0.85 # Higher confidence for grenades to avoid false positives
+#           - label: knife
+#             confidence: 0.70
+#             trigger_event_recording: true
