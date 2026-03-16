@@ -1,0 +1,139 @@
+2026-03-16 08:45:22.259 [INFO    ] [viseron.core] - -------------------------------------------
+2026-03-16 08:45:22.260 [INFO    ] [viseron.core] - Initializing Viseron 3.4.1
+2026-03-16 08:45:22.294 [INFO    ] [viseron.components] - Setting up component data_stream
+2026-03-16 08:45:22.296 [INFO    ] [viseron.components] - Setup of component data_stream took 0.0 seconds
+2026-03-16 08:45:22.798 [INFO    ] [viseron.components] - Setting up component webserver
+2026-03-16 08:45:22.818 [INFO    ] [viseron.components] - Setup of component webserver took 0.0 seconds
+2026-03-16 08:45:22.818 [INFO    ] [viseron.components] - Setting up component storage
+2026-03-16 08:45:23.210 [INFO    ] [viseron.components.storage] - Database connection established successfully
+2026-03-16 08:45:23.231 [INFO    ] [alembic.runtime.migration] - Context impl PostgresqlImpl.
+2026-03-16 08:45:23.232 [INFO    ] [alembic.runtime.migration] - Will assume transactional DDL.
+2026-03-16 08:45:23.473 [INFO    ] [viseron.components] - Setup of component storage took 0.7 seconds
+2026-03-16 08:45:23.474 [INFO    ] [viseron.components] - Setting up component ffmpeg
+2026-03-16 08:45:23.475 [INFO    ] [viseron.components] - Setting up component mog2
+2026-03-16 08:45:23.476 [INFO    ] [viseron.components] - Setting up component nvr
+2026-03-16 08:45:23.476 [INFO    ] [viseron.components] - Setting up component camera_2
+2026-03-16 08:45:23.475 [INFO    ] [viseron.components] - Setting up component yolo
+2026-03-16 08:45:23.479 [INFO    ] [viseron.components] - Setup of component nvr took 0.0 seconds
+2026-03-16 08:45:23.479 [ERROR   ] [viseron.components] - Failed to load component camera_2: No module named 'viseron.components.camera_2'
+2026-03-16 08:45:23.480 [INFO    ] [viseron.components] - Setup of component ffmpeg took 0.0 seconds
+2026-03-16 08:45:23.481 [INFO    ] [viseron.components] - Setup of component mog2 took 0.0 seconds
+2026-03-16 08:45:23.483 [INFO    ] [viseron.components] - Setup of component yolo took 0.0 seconds
+2026-03-16 08:45:23.985 [ERROR   ] [viseron.components] - Domain motion_detector for component mog2 requires domain camera with identifier camera_2 but it has not been setup
+2026-03-16 08:45:23.986 [INFO    ] [viseron.components] - Setting up domain camera for component ffmpeg with identifier camera_1
+2026-03-16 08:45:23.987 [INFO    ] [viseron.components] - Setting up domain object_detector for component yolo with identifier camera_1
+2026-03-16 08:45:23.987 [INFO    ] [viseron.components] - Setting up domain nvr for component nvr with identifier camera_1
+2026-03-16 08:45:39.097 [ERROR   ] [viseron.components] - Domain camera for component ffmpeg is not ready. Retrying in 10 seconds. Error: FFprobe command timed out after 15s
+2026-03-16 08:45:43.431 [WARNING ] [tornado.access] - 404 GET /api/v1/camera/success?failed=true (172.18.0.1) 68.63ms
+2026-03-16 08:45:44.438 [WARNING ] [tornado.access] - 404 GET /api/v1/camera/success?failed=true (172.18.0.1) 0.99ms
+2026-03-16 08:45:45.075 [ERROR   ] [viseron.components.ffmpeg.stream.camera_1] - [tcp @ 0x5ec24982d0c0] Connection to tcp://192.168.137.226:8080?timeout=0 failed: Connection refused
+2026-03-16 08:45:49.312 [INFO    ] [viseron.components] - Setting up domain camera for component ffmpeg with identifier camera_1, attempt 2
+2026-03-16 08:45:53.217 [ERROR   ] [viseron.components.webserver.api.v1.hls] - Could not find init.mp4 file for camera camera_1
+2026-03-16 08:45:53.219 [WARNING ] [tornado.access] - 404 GET /api/v1/hls/camera_1/19/index.m3u8 (172.18.0.1) 58.17ms
+2026-03-16 08:46:09.314 [WARNING ] [viseron.components] - Setup of domain camera for component ffmpeg with identifier camera_1 is taking longer than 20 seconds
+2026-03-16 08:46:10.342 [ERROR   ] [viseron.components.ffmpeg.stream.camera_1] - [tcp @ 0x5d878f4730c0] Connection to tcp://192.168.137.226:8080?timeout=0 failed: Connection refused
+2026-03-16 08:46:10.347 [ERROR   ] [viseron.components] - Domain camera for component ffmpeg is not ready. Retrying in 20 seconds. Error: FFprobe could not connect to stream. Output: {'error': {'code': -111, 'string': 'Connection refused'}}
+2026-03-16 08:46:11.032 [WARNING ] [tornado.access] - 404 GET /api/v1/camera/success?failed=true (172.18.0.1) 1.88ms
+2026-03-16 08:46:12.038 [WARNING ] [tornado.access] - 404 GET /api/v1/camera/success?failed=true (172.18.0.1) 1.03ms
+2026-03-16 08:46:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 08:46:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 08:46:30.577 [INFO    ] [viseron.components] - Setting up domain camera for component ffmpeg with identifier camera_1, attempt 3
+2026-03-16 08:46:50.580 [WARNING ] [viseron.components] - Setup of domain camera for component ffmpeg with identifier camera_1 is taking longer than 20 seconds
+2026-03-16 08:46:51.623 [ERROR   ] [viseron.components.ffmpeg.stream.camera_1] - [tcp @ 0x5b3b2f2540c0] Connection to tcp://192.168.137.226:8080?timeout=0 failed: Connection refused
+2026-03-16 08:46:51.627 [ERROR   ] [viseron.components] - Domain camera for component ffmpeg is not ready. Retrying in 30 seconds. Error: FFprobe could not connect to stream. Output: {'error': {'code': -111, 'string': 'Connection refused'}}
+2026-03-16 08:47:21.874 [INFO    ] [viseron.components] - Setting up domain camera for component ffmpeg with identifier camera_1, attempt 4
+2026-03-16 08:47:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 08:47:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 08:47:41.877 [WARNING ] [viseron.components] - Setup of domain camera for component ffmpeg with identifier camera_1 is taking longer than 20 seconds
+2026-03-16 08:47:42.933 [ERROR   ] [viseron.components.ffmpeg.stream.camera_1] - [tcp @ 0x60ca6b8c70c0] Connection to tcp://192.168.137.226:8080?timeout=0 failed: Connection refused
+2026-03-16 08:47:42.934 [ERROR   ] [viseron.components.ffmpeg.stream.camera_1] - rtsp://*****:*****@192.168.137.226:8080/h264_pcm.sdp: Connection refused
+2026-03-16 08:47:42.941 [ERROR   ] [viseron.components] - Domain camera for component ffmpeg is not ready. Retrying in 40 seconds. Error: FFprobe could not connect to stream. Output: {'error': {'code': -111, 'string': 'Connection refused'}}
+2026-03-16 08:48:23.000 [INFO    ] [viseron.components] - Setting up domain camera for component ffmpeg with identifier camera_1, attempt 5
+2026-03-16 08:48:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 08:48:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 08:48:43.003 [WARNING ] [viseron.components] - Setup of domain camera for component ffmpeg with identifier camera_1 is taking longer than 20 seconds
+2026-03-16 08:48:44.042 [ERROR   ] [viseron.components.ffmpeg.stream.camera_1] - [tcp @ 0x5fe6dac970c0] Connection to tcp://192.168.137.226:8080?timeout=0 failed: Connection refused
+2026-03-16 08:48:44.043 [ERROR   ] [viseron.components.ffmpeg.stream.camera_1] - rtsp://*****:*****@192.168.137.226:8080/h264_pcm.sdp: Connection refused
+2026-03-16 08:48:44.050 [ERROR   ] [viseron.components] - Domain camera for component ffmpeg is not ready. Retrying in 50 seconds. Error: FFprobe could not connect to stream. Output: {'error': {'code': -111, 'string': 'Connection refused'}}
+2026-03-16 08:49:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 08:49:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 08:49:34.119 [INFO    ] [viseron.components] - Setting up domain camera for component ffmpeg with identifier camera_1, attempt 6
+2026-03-16 08:49:54.123 [WARNING ] [viseron.components] - Setup of domain camera for component ffmpeg with identifier camera_1 is taking longer than 20 seconds
+2026-03-16 08:49:55.170 [ERROR   ] [viseron.components.ffmpeg.stream.camera_1] - [tcp @ 0x64d49a0bf0c0] Connection to tcp://192.168.137.226:8080?timeout=0 failed: Connection refused
+2026-03-16 08:49:55.174 [ERROR   ] [viseron.components] - Domain camera for component ffmpeg is not ready. Retrying in 60 seconds. Error: FFprobe could not connect to stream. Output: {'error': {'code': -111, 'string': 'Connection refused'}}
+2026-03-16 08:50:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 08:50:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 08:50:55.260 [INFO    ] [viseron.components] - Setting up domain camera for component ffmpeg with identifier camera_1, attempt 7
+2026-03-16 08:51:15.261 [WARNING ] [viseron.components] - Setup of domain camera for component ffmpeg with identifier camera_1 is taking longer than 20 seconds
+2026-03-16 08:51:16.309 [ERROR   ] [viseron.components.ffmpeg.stream.camera_1] - [tcp @ 0x5d75e2c450c0] Connection to tcp://192.168.137.226:8080?timeout=0 failed: Connection refused
+2026-03-16 08:51:16.312 [ERROR   ] [viseron.components] - Domain camera for component ffmpeg is not ready. Retrying in 70 seconds. Error: FFprobe could not connect to stream. Output: {'error': {'code': -111, 'string': 'Connection refused'}}
+2026-03-16 08:51:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 08:51:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 08:52:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 08:52:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 08:52:26.416 [INFO    ] [viseron.components] - Setting up domain camera for component ffmpeg with identifier camera_1, attempt 8
+2026-03-16 08:52:46.419 [WARNING ] [viseron.components] - Setup of domain camera for component ffmpeg with identifier camera_1 is taking longer than 20 seconds
+2026-03-16 08:52:47.477 [ERROR   ] [viseron.components.ffmpeg.stream.camera_1] - [tcp @ 0x64de9a6510c0] Connection to tcp://192.168.137.226:8080?timeout=0 failed: Connection refused
+2026-03-16 08:52:47.481 [ERROR   ] [viseron.components] - Domain camera for component ffmpeg is not ready. Retrying in 80 seconds. Error: FFprobe could not connect to stream. Output: {'error': {'code': -111, 'string': 'Connection refused'}}
+2026-03-16 08:53:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 08:53:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 08:54:07.600 [INFO    ] [viseron.components] - Setting up domain camera for component ffmpeg with identifier camera_1, attempt 9
+2026-03-16 08:54:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 08:54:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 08:54:27.603 [WARNING ] [viseron.components] - Setup of domain camera for component ffmpeg with identifier camera_1 is taking longer than 20 seconds
+2026-03-16 08:54:28.663 [ERROR   ] [viseron.components.ffmpeg.stream.camera_1] - [tcp @ 0x6293986010c0] Connection to tcp://192.168.137.226:8080?timeout=0 failed: Connection refused
+2026-03-16 08:54:28.668 [ERROR   ] [viseron.components] - Domain camera for component ffmpeg is not ready. Retrying in 90 seconds. Error: FFprobe could not connect to stream. Output: {'error': {'code': -111, 'string': 'Connection refused'}}
+2026-03-16 08:55:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 08:55:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 08:55:58.797 [INFO    ] [viseron.components] - Setting up domain camera for component ffmpeg with identifier camera_1, attempt 10
+2026-03-16 08:56:18.799 [WARNING ] [viseron.components] - Setup of domain camera for component ffmpeg with identifier camera_1 is taking longer than 20 seconds
+2026-03-16 08:56:19.898 [ERROR   ] [viseron.components.ffmpeg.stream.camera_1] - [tcp @ 0x5d01ac09e0c0] Connection to tcp://192.168.137.226:8080?timeout=0 failed: Connection refused
+2026-03-16 08:56:19.899 [ERROR   ] [viseron.components.ffmpeg.stream.camera_1] - rtsp://*****:*****@192.168.137.226:8080/h264_pcm.sdp: Connection refused
+2026-03-16 08:56:19.905 [ERROR   ] [viseron.components] - Domain camera for component ffmpeg is not ready. Retrying in 100 seconds. Error: FFprobe could not connect to stream. Output: {'error': {'code': -111, 'string': 'Connection refused'}}
+2026-03-16 08:56:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 08:56:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 08:57:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 08:57:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 08:58:00.052 [INFO    ] [viseron.components] - Setting up domain camera for component ffmpeg with identifier camera_1, attempt 11
+2026-03-16 08:58:20.053 [WARNING ] [viseron.components] - Setup of domain camera for component ffmpeg with identifier camera_1 is taking longer than 20 seconds
+2026-03-16 08:58:21.080 [ERROR   ] [viseron.components.ffmpeg.stream.camera_1] - [tcp @ 0x566e89f800c0] Connection to tcp://192.168.137.226:8080?timeout=0 failed: Connection refused
+2026-03-16 08:58:21.085 [ERROR   ] [viseron.components] - Domain camera for component ffmpeg is not ready. Retrying in 110 seconds. Error: FFprobe could not connect to stream. Output: {'error': {'code': -111, 'string': 'Connection refused'}}
+2026-03-16 08:58:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 08:58:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 08:59:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 08:59:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 09:00:11.252 [INFO    ] [viseron.components] - Setting up domain camera for component ffmpeg with identifier camera_1, attempt 12
+2026-03-16 09:00:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 09:00:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 09:00:31.254 [WARNING ] [viseron.components] - Setup of domain camera for component ffmpeg with identifier camera_1 is taking longer than 20 seconds
+2026-03-16 09:00:32.297 [ERROR   ] [viseron.components.ffmpeg.stream.camera_1] - [tcp @ 0x61bf162b80c0] Connection to tcp://192.168.137.226:8080?timeout=0 failed: Connection refused
+2026-03-16 09:00:32.301 [ERROR   ] [viseron.components] - Domain camera for component ffmpeg is not ready. Retrying in 120 seconds. Error: FFprobe could not connect to stream. Output: {'error': {'code': -111, 'string': 'Connection refused'}}
+2026-03-16 09:01:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 09:01:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 09:02:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 09:02:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 09:02:32.479 [INFO    ] [viseron.components] - Setting up domain camera for component ffmpeg with identifier camera_1, attempt 13
+2026-03-16 09:02:52.480 [WARNING ] [viseron.components] - Setup of domain camera for component ffmpeg with identifier camera_1 is taking longer than 20 seconds
+2026-03-16 09:02:53.527 [ERROR   ] [viseron.components.ffmpeg.stream.camera_1] - [tcp @ 0x597f688620c0] Connection to tcp://192.168.137.226:8080?timeout=0 failed: Connection refused
+2026-03-16 09:02:53.531 [ERROR   ] [viseron.components] - Domain camera for component ffmpeg is not ready. Retrying in 130 seconds. Error: FFprobe could not connect to stream. Output: {'error': {'code': -111, 'string': 'Connection refused'}}
+2026-03-16 09:03:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 09:03:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 09:04:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 09:04:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 09:05:03.721 [INFO    ] [viseron.components] - Setting up domain camera for component ffmpeg with identifier camera_1, attempt 14
+2026-03-16 09:05:23.723 [WARNING ] [viseron.components] - Setup of domain camera for component ffmpeg with identifier camera_1 is taking longer than 20 seconds
+2026-03-16 09:05:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 09:05:24.758 [ERROR   ] [viseron.components.ffmpeg.stream.camera_1] - [tcp @ 0x57f133e0b0c0] Connection to tcp://192.168.137.226:8080?timeout=0 failed: Connection refused
+2026-03-16 09:05:24.763 [ERROR   ] [viseron.components] - Domain camera for component ffmpeg is not ready. Retrying in 140 seconds. Error: FFprobe could not connect to stream. Output: {'error': {'code': -111, 'string': 'Connection refused'}}
+2026-03-16 09:05:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 09:06:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 09:06:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 09:07:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 09:07:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 09:07:44.971 [INFO    ] [viseron.components] - Setting up domain camera for component ffmpeg with identifier camera_1, attempt 15
+2026-03-16 09:08:04.974 [WARNING ] [viseron.components] - Setup of domain camera for component ffmpeg with identifier camera_1 is taking longer than 20 seconds
+2026-03-16 09:08:06.008 [ERROR   ] [viseron.components.ffmpeg.stream.camera_1] - [tcp @ 0x55aaaeb390c0] Connection to tcp://192.168.137.226:8080?timeout=0 failed: Connection refused
+2026-03-16 09:08:06.012 [ERROR   ] [viseron.components] - Domain camera for component ffmpeg is not ready. Retrying in 150 seconds. Error: FFprobe could not connect to stream. Output: {'error': {'code': -111, 'string': 'Connection refused'}}
+2026-03-16 09:08:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
+2026-03-16 09:08:25.069 [WARNING ] [viseron.components] - Domain object_detector for component yolo with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1']
+2026-03-16 09:09:23.993 [WARNING ] [viseron.components] - Domain nvr for component nvr with identifier camera_1 is still waiting for dependencies: ['domain: camera, identifier: camera_1', 'domain: object_detector, identifier: camera_1']
